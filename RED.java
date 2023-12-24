@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class PacketSimulation {
+public class RED {
 
     static final int MAX_PACKETS = 20;
     static final int QUEUE_SIZE = 10;

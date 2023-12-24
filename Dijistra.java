@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.PriorityQueue;
 
 
-public class Main
+public class Dijistra
 {
   public static void main(String []args)
  {
@@ -45,6 +45,7 @@ class Diji
   {
    System.out.println("ENTER THE SOURCE AND DESTINATION");
     int s,d;
+    Scanner sc=new Scanner(System.in);
     s=sc.nextInt();
     d=sc.nextInt();
     src[s]=0;

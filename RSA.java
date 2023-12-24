@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class RSAAlgorithm {
+public class RSA {
 
     public static int gcd(int a, int b) {
         while (b != 0) {

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class BellmanFordAlgorithm {
+public class bellman_ford {
 
     static final int INF = Integer.MAX_VALUE;
 
