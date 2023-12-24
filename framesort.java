@@ -12,7 +12,7 @@ class Frame {
     }
 }
 
-public class Main {
+public class framesort {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the Size of the data: ");
