@@ -15,25 +15,26 @@ class Frame {
 public class framesort {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the Size of the data: ");
-        int total = scanner.nextInt();
+        // System.out.print("Enter the Size of the data: ");
+        // int total = scanner.nextInt();
 
-        System.out.print("Enter the Size of each data packet: ");
-        int size= scanner.nextInt();
+        // System.out.print("Enter the Size of each data packet: ");
+        // int size= scanner.nextInt();
 
-        int n=total/size;
+        //int n=total/size;
+        System.out.print("Enter the number of frames: ");
+        int n = scanner.nextInt(); 
 
         List<Integer> seqList = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             seqList.add(i);
         }
 
-
         List<Frame> frames = new ArrayList<>();
         for (int seqNo : seqList) {
             frames.add(new Frame(seqNo));
         }
-
+        
         for (Frame frame : frames) {
             System.out.print("Enter data for frame " + frame.seqNo + ": ");
             frame.data = scanner.next();
@@ -41,6 +42,7 @@ public class framesort {
         Collections.shuffle(frames);
         System.out.print("Before Sorting\n");
 
+        
         for (Frame frame : frames) {
             System.out.println("Frame " + frame.seqNo + " : " + frame.data);
         }
@@ -50,5 +52,9 @@ public class framesort {
         for (Frame frame : frames) {
             System.out.println("Frame " + frame.seqNo + " : " + frame.data);
         }
+        System.out.print("After Sorting\n");
+        for (Frame frame : frames) {
+            System.out.print(frame.data);
+        }    
     }
 }

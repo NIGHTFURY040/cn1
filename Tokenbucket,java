@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TokenBucket {
+public class Tokenbucket {
     public static void main(String[] args) {
         int tokens = 0; // initial number of tokens in the bucket
         int rate = 10; // rate at which tokens are added to the bucket

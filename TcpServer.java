@@ -10,6 +10,7 @@ public class TcpServer {
         InputStream iStream = sock.getInputStream();
         BufferedReader nameRead = new BufferedReader(new InputStreamReader(iStream));
         String fname = nameRead.readLine();
+        System.out.println("entered filename:"+fname);
         OutputStream ostream = sock.getOutputStream();
         PrintWriter pwrite = new PrintWriter(ostream, true);
         try {
