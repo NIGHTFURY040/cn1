@@ -77,8 +77,12 @@ public class RSA {
 
         List<Integer> ct = rsaEncrypt(plainText, e, n);
         System.out.println("Ciphertext: " + ct);
-
-        String pt = rsaDecrypt(ct, d, n);
+        ArrayList<Integer> mylist = new ArrayList<Integer>(ct.size());
+        for(int k=0;k<ct.size();k++) {
+        int i = sc.nextInt();
+        mylist.add(i);
+            }
+        String pt = rsaDecrypt(mylist, d, n);  // otherwise directly send 'ct' instead of mylist
         System.out.println("Plaintext: " + pt);
     }
 }
