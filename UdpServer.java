@@ -1,29 +1,37 @@
+/*Write a program on datagram socket for client/server to display the 
+messages on client side, typed at the server side.*/
+
 import java.net.*;
-import java.io.*;
-import java.util.Scanner;
 
-class UdpServer
-{
-	public static void main(String args[]) throws Exception
-	{
-		Scanner in = new Scanner(System.in);
-		DatagramSocket datagramSocket = new DatagramSocket();
-		InetAddress clientAddress = InetAddress.getByName("127.0.0.1");
-		String message;
-		byte[] buffer;
-		DatagramPacket datagramPacket;
-		System.out.println("Enter messages to send: ");
-		while (true){
-			message = in.nextLine();
-			buffer = message.getBytes();
-			datagramPacket = new DatagramPacket(buffer, buffer.length, clientAddress, 3000);
-			datagramSocket.send(datagramPacket);
-
-			if (message.equalsIgnoreCase("exit")) {
-				datagramSocket.close();
-				break;
-			}
-
-		}
-	}
+public class UdpServer {
+    public static void main(String args[]) throws Exception {
+    DatagramSocket serverSocket=null;
+    try{
+        serverSocket = new DatagramSocket(9884);
+        System.out.println("Server is Ready for the client");
+        byte[] receiveData = new byte[1024];
+        byte[] sendData = new byte[1024];
+        
+            while (true) {
+            
+                DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+                serverSocket.receive(receivePacket);
+                String sentence = new String(receivePacket.getData());
+                System.out.println("RECEIVED: " + sentence);
+                InetAddress IPAddress = receivePacket.getAddress();
+                int port = receivePacket.getPort();
+                String capitalizedSentence = sentence.toUpperCase();
+                sendData = capitalizedSentence.getBytes();
+                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
+                serverSocket.send(sendPacket);
+            }           
+    }catch (Exception e) {
+                    e.printStackTrace();
+                }finally{
+                serverSocket.close();              
+         
+      }
+  }
 }
+
+/*first run the server program and then the client program in another terminal*/

@@ -16,7 +16,8 @@ public class RED {
             if (queueLength == QUEUE_SIZE) {
                 System.out.println("Packet dropped (QUEUE FULL)");
                 dropProbability = MIN_PROBABILITY;
-            } else if (rand.nextDouble() < dropProbability) {
+            } 
+            else if (rand.nextDouble() < dropProbability) {
                 System.out.println("Packet dropped (RANDOM)");
                 dropProbability += (MAX_PROBABILITY - MIN_PROBABILITY) / (MAX_PACKETS - 1);
             } else {
