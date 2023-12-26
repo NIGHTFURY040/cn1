@@ -1,5 +1,3 @@
-/*UDP cleint program*/
-
 import java.io.*; 
 import java.net.*;
      public class UdpClient
@@ -14,7 +12,7 @@ import java.net.*;
           System.out.println("Enter the string in lowercase so that you receive the message in Uppercase from the server");
           String sentence=inFromUser.readLine();
           sendData=sentence.getBytes();
-         DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9884);
+         DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 1090);
           clientSocket.send(sendPacket);
           DatagramPacket receivePacket=new DatagramPacket(receiveData, receiveData.length);
           clientSocket.receive(receivePacket);
@@ -24,19 +22,3 @@ import java.net.*;
                
           }
 }
-
-/*output;-
-  first run the server program in one terminal in another terminal run the client program
-Server side
-javac UDPServer.java
-java UDPServer
-Server is Ready for the client
-RECEIVED: abcdef
-
-Client Side
-javac UDPClient.java
-java UDPClient
-Enter the string in lowercase so that you receive the message in Uppercase from the server
-abcdef
-FROM SERVER: ABCDEF
-*/

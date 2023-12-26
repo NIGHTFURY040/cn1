@@ -7,7 +7,7 @@ public class UdpServer {
     public static void main(String args[]) throws Exception {
     DatagramSocket serverSocket=null;
     try{
-        serverSocket = new DatagramSocket(9884);
+        serverSocket = new DatagramSocket(1090);
         System.out.println("Server is Ready for the client");
         byte[] receiveData = new byte[1024];
         byte[] sendData = new byte[1024];
@@ -34,4 +34,3 @@ public class UdpServer {
   }
 }
 
-/*first run the server program and then the client program in another terminal*/

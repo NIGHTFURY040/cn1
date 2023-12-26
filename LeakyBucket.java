@@ -1,9 +1,3 @@
-/*Write a program for congestion control using leaky bucket algorithm 
-and token bucket algorithm.*/
-
-/*Leaky bucket algorithm*/
-
-
 import java.util.Scanner;
 
 public class LeakyBucket {
