@@ -52,9 +52,9 @@ public class framesort {
         for (Frame frame : frames) {
             System.out.println("Frame " + frame.seqNo + " : " + frame.data);
         }
-        System.out.print("After Sorting\n");
+        System.out.print("After Sorting string data:\n");
         for (Frame frame : frames) {
-            System.out.print(frame.data);
+            System.out.print(frame.data+" ");
         }    
     }
 }

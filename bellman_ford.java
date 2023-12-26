@@ -34,7 +34,7 @@ public class bellman_ford {
 
     public static void printArr(int[] dist, int V) {
         System.out.println("Vertex Distance from Source:");
-        for (int i = 0; i < V; ++i) {
+        for (int i = 0; i < V; i++) {
             System.out.println(i + "\t\t" + dist[i]);
         }
     }
